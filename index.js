@@ -35,7 +35,7 @@ app.get('/onetest', (req, res) => { res.send('${one}') });
 
 app.post('/garantia/cliente', addCliente); //Agrega Cliente nuevo
 app.get('/garantia/clientes', showClients); //Mira todos los clientes
-app.get('/garantia/garantias', clientsWarranty); //Mira las garantías de clientes
+app.get('/garantia/garantias/:numero', clientsWarranty); //Mira la garantía x cliente
 app.delete('/garantia/eliminar', deleteOne); //Elimina clientes
 
 app.listen(PORT, () => {

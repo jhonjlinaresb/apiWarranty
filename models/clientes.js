@@ -15,6 +15,7 @@ const ClientSchema = mongoose.Schema({
     },
     numero:{
         type: Number,
+        unique: true,
         required: [true, 'Required field']
     },
     direccion:{
