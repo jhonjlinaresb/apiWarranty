@@ -7,6 +7,37 @@
     <title>Hello</title>
 </head>
 <body>
-    <p>Hello of Page2</p>
+
+    <div id="app-7">
+        <ol>
+          <!--
+            Ahora proporcionamos a cada todo-item con el objeto todo
+            que representa, para que su contenido pueda ser dinámico.
+            También necesitamos proporcionar a cada componente con una "clave",
+            que vamos a explicar más adelante.
+          -->
+          <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id">
+          </todo-item>
+        </ol>
+      </div>
+
+      <p v-if="seen">Now you see me</p>
+
+      <div id="example">
+        <p>Mensaje original: "{{ message }}"</p>
+        <p>Mensaje invertido computado: "{{ reversedMessage }}"</p>
+      </div>
+
+      <div id="appAxios">
+        {{ data }}
+      </div>
+
+<div v-bind:id="'list-' + id"></div>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="../app.js"></script>
 </body>
 </html>

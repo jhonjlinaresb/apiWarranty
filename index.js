@@ -27,11 +27,10 @@ app.options('/*', (req, res) => res.send());
 
 app.use('/',express.static(__dirname + '/public/'));
 
-const one = app.use('/one', express.static(__dirname + '/public/pages/one.html'));
+app.use('/one', express.static(__dirname + '/public/pages/one.html'));
+app.use('/two', express.static(__dirname + '/public/pages/two.html'));
 
 app.get('/', (req, res) => { res.send('Server Online') });
-
-app.get('/onetest', (req, res) => { res.send('${one}') });
 
 app.post('/garantia/cliente', addCliente); //Agrega Cliente nuevo
 app.get('/garantia/clientes', showClients); //Mira todos los clientes
