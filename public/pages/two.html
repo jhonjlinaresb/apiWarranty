@@ -14,13 +14,16 @@
           <div class="columns medium-3" v-for="post in posts">
             <div class="card">
               <div class="card-divider">
-                {{ post._id }}
+                <p>id: {{ post._id }}</p>
               </div>
               <div class="card-section">
                 <p>{{ post.estado }}.</p>
               </div>
               <div class="card-section">
                 <p>{{ post.nombre }}.</p>
+              </div>
+              <div class="card-section">
+                <p>{{ post.numero }}.</p>
               </div>
               <div class="card-section">
                 <p>{{ post.direccion }}.</p>
