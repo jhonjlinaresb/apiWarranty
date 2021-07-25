@@ -9,7 +9,33 @@
 <body>
     <p>THIS IS THE TEST TWO</p>
 
-    
+        <div class="container" id="app">
+          <h3 class="text-center">Obtener Clientes</h3> 
+          <div class="columns medium-3" v-for="post in posts">
+            <div class="card">
+              <div class="card-divider">
+                {{ post._id }}
+              </div>
+              <div class="card-section">
+                <p>{{ post.estado }}.</p>
+              </div>
+              <div class="card-section">
+                <p>{{ post.nombre }}.</p>
+              </div>
+              <div class="card-section">
+                <p>{{ post.direccion }}.</p>
+              </div>
+              <div class="card-section">
+                <p>{{ post.fechaInicio }}.</p>
+              </div>
+              <div class="card-section">
+                <p>{{ post.fechaFin }}.</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <button class="button" style="display:block;margin:auto;" @click="getClientes">Get Clientes vía REST</button>
+        </div>
 
 
 
