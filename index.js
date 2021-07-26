@@ -25,8 +25,8 @@ app.use(cors);
 app.use(express.json());
 app.options('/*', (req, res) => res.send());
 
+//Páginas estáticas para mostrar en el front de carpeta Public
 app.use('/',express.static(__dirname + '/public/'));
-
 app.use('/one', express.static(__dirname + '/public/pages/one.html'));
 app.use('/two', express.static(__dirname + '/public/pages/two.html'));
 
