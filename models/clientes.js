@@ -27,7 +27,8 @@ const ClientSchema = mongoose.Schema({
         required: [true, 'Required field']
     },
     descripcion:{
-        type: String
+        type: String,
+        required: [true, 'Required field']
     }
 })
 
