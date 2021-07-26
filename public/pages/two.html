@@ -4,47 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Vista de todos los clientes</title>
 </head>
 <body>
-    <p>THIS IS THE TEST TWO</p>
 
-        <div class="container" id="app">
-          <h3 class="text-center">Obtener Clientes</h3> 
-          <div class="columns medium-3" v-for="post in posts">
-            <div class="card">
-              <div class="card-divider">
-                <p>id: {{ post._id }}</p>
+    <div class="container" id="app">
+        <header>Vista de todas las garantías</header>
+        <div class="columns medium-3" v-for="post in posts">
+        <div class="card" style="align-items: center;">
+        <h4 class="text-center">Obtener Cliente</h4> 
+            <div class="card-body">
+              <div class="card-text">
+                <h5 class="card-title">ID:</h5>
+                <h6 class="card-text">{{ post._id }}</h6>
               </div>
               <div class="card-section">
-                <p>{{ post.estado }}.</p>
+                <h5>Estado:</h5>
+                <h6>{{ post.estado }}</h6>
               </div>
               <div class="card-section">
-                <p>{{ post.nombre }}.</p>
+                <h5>Nombre:</h5>
+                <h6>{{ post.nombre }}</h6>
               </div>
               <div class="card-section">
-                <p>{{ post.numero }}.</p>
+                <h5>Número</h5>
+                <h6>{{ post.numero }}</h6>
               </div>
               <div class="card-section">
-                <p>{{ post.direccion }}.</p>
+                <h5>Dirección</h5>
+                <h6>{{ post.direccion }}</h6>
               </div>
               <div class="card-section">
-                <p>{{ post.fechaInicio }}.</p>
+                <h5>Fecha de Inicio:</h5>
+                <h6>{{ post.fechaInicio }}</6>
               </div>
               <div class="card-section">
-                <p>{{ post.fechaFin }}.</p>
+                <h5>Fecha de Finalización:</h5>
+                <h6>{{ post.fechaFin }}</h6>
               </div>
               <div class="card-section">
+                <h5>Descripción del servicio:</h5>
                 <p>{{ post.descripcion }}.</p>
               </div>
+
+            </div>
             </div>
           </div>
           <hr>
           <button class="button" style="display:block;margin:auto;" @click="getClientes">Get Clientes vía REST</button>
-        </div>
+    </div>
 
 
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="../app.js"></script>
