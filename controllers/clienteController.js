@@ -9,7 +9,8 @@ const addCliente = async (req, res)  => {
             fechaFin: req.body.fechaFin, //Tipo Date
             numero: req.body.numero, //Tipo Number
             direccion: req.body.direccion, //Tipo String
-            nombre: req.body.nombre //Tipo String
+            nombre: req.body.nombre, //Tipo String
+            descripcion: req.body.descripcion //Tipo String
         }).save(); //Guarda los datos 
         res.status(201).send(cliente); //Genera la respuesta con Código 201
     }

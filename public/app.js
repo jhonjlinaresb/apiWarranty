@@ -11,7 +11,8 @@ var vm = new Vue({ //Se genera un nuevo Vue
       numero: "numero", 
       direccion: "direccion", 
       fechaInicio: "fechaInicio", 
-      fechaFin: "fechaFin"
+      fechaFin: "fechaFin",
+      descripcion: "descripcion"
       }
     ]
   },

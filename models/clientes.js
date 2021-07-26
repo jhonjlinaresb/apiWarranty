@@ -25,6 +25,9 @@ const ClientSchema = mongoose.Schema({
     nombre:{
         type: String,
         required: [true, 'Required field']
+    },
+    descripcion:{
+        type: String
     }
 })
 
