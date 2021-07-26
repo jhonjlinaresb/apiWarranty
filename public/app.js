@@ -1,4 +1,3 @@
-//Obtener todos los clientes-------------------
 // Se  crea una variable para cargar los datos de los clientes
 var vm = new Vue({ //Se genera un nuevo Vue
   el: '#app',//Llama a la etiqueta de la pagina
@@ -25,3 +24,28 @@ var vm = new Vue({ //Se genera un nuevo Vue
   }
 });
 
+let parametros = document.getElementById("parametros").value;
+var vmGet = new Vue({
+  el: '#appGetClient',
+  data: { 
+    params: parametros,
+    gets: [{
+      id: "_id", 
+      estado: "estado", 
+      nombre: "nombre", 
+      numero: "numero", 
+      direccion: "direccion", 
+      fechaInicio: "fechaInicio", 
+      fechaFin: "fechaFin",
+      descripcion: "descripcion"
+    }] },
+    
+  params: { numero: parametros },
+  methods: {
+    getCliente: function() {
+      axios.get('/garantia/garantias/', params)
+      .then(response => {this.gets = response.data})
+      console.log('Proccess Successfuly', this);
+    }
+  }
+});
