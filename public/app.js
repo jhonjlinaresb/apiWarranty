@@ -24,7 +24,7 @@ var vm = new Vue({ //Se genera un nuevo Vue
   }
 });
 
-let parametros = document.getElementById("parametros").value;
+let parametros = document.getElementById("parametros");
 var vmGet = new Vue({
   el: '#appGetClient',
   data: { 

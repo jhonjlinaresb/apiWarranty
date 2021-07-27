@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('./middleware/cors');
-const bodyParser = require('body-parser');
 
 //LLamamos las funciones para realizar el CRUD de clientes
 const {addCliente, deleteOne, showClients, clientsWarranty} = require('./controllers/clienteController');
@@ -11,12 +10,6 @@ db();
 const app = express();
 
 // Convierte peticiones a JSON
-app.use(
-    bodyParser.urlencoded({
-        extended: true
-    })
-);
-app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 8000;
 
