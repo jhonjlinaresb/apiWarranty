@@ -24,46 +24,46 @@
       </a>
 
       <div class="container" id="appGetClient">
-        <input type="number" id="parametros" class="form-control form-control-lg" placeholder="643976458"><br>
-        <button type="button" class="btn btn-success" v-on:click="getCliente" @click="getCliente" type="submit">
+        <input type="value" id="numero" class="form-control form-control-lg" placeholder="643976458"><br>
+        <button type="button" class="btn btn-success" @click="getCliente"> <!--v-on:click="getCliente" -->
           Verificar
         </button>
-      </input>
-      <div class="p-3 mb-2 bg-dark" v-for="get in gets">
+       </input>
+      
+      <div class="p-3 mb-2 bg-dark" v-for="client in clients">
       <div class="bg-dark card-body">
-        <div class="card-section">
+        <div class="card-text">
           <h5>Estado:</h5>
-          <h6>{{ get.estado }}</h6>
+          <h6>{{ client.estado }}</h6>
         </div>
         <div class="card-section">
           <h5>Nombre:</h5>
-          <h6>{{ get.nombre }}</h6>
+          <h6>{{ client.nombre }}</h6>
         </div>
         <div class="card-section">
           <h5>Número</h5>
-          <h6>{{ get.numero }}</h6>
+          <h6>{{ client.numero }}</h6>
         </div>
         <div class="card-section">
           <h5>Dirección</h5>
-          <h6>{{ get.direccion }}</h6>
+          <h6>{{ client.direccion }}</h6>
         </div>
         <div class="card-section">
           <h5>Fecha de Inicio:</h5>
-          <h6>{{ get.fechaInicio }}</6>
+          <h6>{{ client.fechaInicio }}</6>
         </div>
         <div class="card-section">
           <h5>Fecha de Finalización:</h5>
-          <h6>{{ get.fechaFin }}</h6>
+          <h6>{{ client.fechaFin }}</h6>
         </div>
         <div class="card-section">
           <h5>Descripción del servicio:</h5>
-          <p>{{ get.descripcion }}.</p>
+          <p>{{ clients.descripcion }}.</p>
         </div>
 
       </div>
       </div>
       </div>
-      
     </div>
 
 

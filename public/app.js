@@ -24,12 +24,13 @@ var vm = new Vue({ //Se genera un nuevo Vue
   }
 });
 
-let parametros = document.getElementById("parametros");
+//let numero = document.getElementById("numero").numero;
 var vmGet = new Vue({
   el: '#appGetClient',
   data: { 
-    params: parametros,
-    gets: [{
+    //params: parametros,
+    clients: [
+      {
       id: "_id", 
       estado: "estado", 
       nombre: "nombre", 
@@ -40,12 +41,14 @@ var vmGet = new Vue({
       descripcion: "descripcion"
     }] },
     
-  params: { numero: parametros },
+  params: numero,
   methods: {
     getCliente: function() {
-      axios.get('/garantia/garantias/', params)
-      .then(response => {this.gets = response.data})
+      let numero = document.getElementById("numero").value;
+      axios.get('/garantia/garantias/'+numero)
+      .then(response => {this.clients = response.data})
       console.log('Proccess Successfuly', this);
+      console.log(numero);
     }
   }
 });
