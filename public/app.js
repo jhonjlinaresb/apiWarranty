@@ -20,35 +20,42 @@ var vm = new Vue({ //Se genera un nuevo Vue
       axios.get('/garantia/clientes') //Petición a la API con Axios
         .then(response => {this.posts = response.data}) //Luego genera una respuesta y se asigna el array de datos a la variable posts
         console.log('Hola, he funcionado :D', this); //Muestra en consola un mensaje de éxito
+        console.log(this.posts)
     }
   }
 });
 
 //let numero = document.getElementById("numero").numero;
-var vmGet = new Vue({
-  el: '#appGetClient',
-  data: { 
-    //params: parametros,
-    clients: [
+new Vue({
+  el: '#main',
+  data: {
+    client:[
       {
-      id: "_id", 
-      estado: "estado", 
-      nombre: "nombre", 
-      numero: "numero", 
-      direccion: "direccion", 
-      fechaInicio: "fechaInicio", 
-      fechaFin: "fechaFin",
-      descripcion: "descripcion"
-    }] },
-    
-  params: numero,
+        id: "", 
+        estado: "estado", 
+        nombre: "nombre", 
+        numero: "numero", 
+        direccion: "direccion", 
+        fechaInicio: "fechaInicio", 
+        fechaFin: "fechaFin",
+        descripcion: "descripcion"
+      }
+    ]
+  },
   methods: {
-    getCliente: function() {
+    getCliente: function(){
       let numero = document.getElementById("numero").value;
+      try {
       axios.get('/garantia/garantias/'+numero)
-      .then(response => {this.clients = response.data})
+      .then(response => {this.client = response.data})
       console.log('Proccess Successfuly', this);
       console.log(numero);
+      console.log(this.client);
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 });
+
+
